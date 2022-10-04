@@ -8,25 +8,17 @@
 
 // Challenge: Clippy doesn't find *everything*. What else would you change to make this code better?
 
-#[allow(clippy::excessive_precision)]
-#[allow(non_upper_case_globals)]
-const pi: f32 = 3.14159265358979323846;
+use std::f32::consts::PI;
 
-#[allow(clippy::collapsible_if)]
-#[allow(clippy::needless_return)]
-#[allow(clippy::assign_op_pattern)]
-#[allow(clippy::blacklisted_name)]
 fn count_to_5() -> i32 {
-    let mut foo = 0;
+    let mut number = 0;
     loop {
-        if foo > pi as i32 {
-            if foo > 5 {
-                break;
-            }
+        if number > PI as i32 && number > 5 {
+            break;
         }
-        foo = foo + 1;
+        number += 1;
     }
-    return 5;
+    5
 }
 
 fn main() {
