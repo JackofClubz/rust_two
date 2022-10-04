@@ -8,7 +8,14 @@
 
 // Challenge: Clippy doesn't find *everything*. What else would you change to make this code better?
 
+#[allow(clippy::excessive_precision)]
+#[allow(non_upper_case_globals)]
 const pi: f32 = 3.14159265358979323846;
+
+#[allow(clippy::collapsible_if)]
+#[allow(clippy::needless_return)]
+#[allow(clippy::assign_op_pattern)]
+#[allow(clippy::blacklisted_name)]
 fn count_to_5() -> i32 {
     let mut foo = 0;
     loop {
@@ -21,9 +28,11 @@ fn count_to_5() -> i32 {
     }
     return 5;
 }
+
 fn main() {
     println!("I can count to {}", count_to_5());
 }
+
 #[cfg(test)]
 mod test {
     use super::*;
