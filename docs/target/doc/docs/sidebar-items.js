@@ -1,1 +1,0 @@
-window.SIDEBAR_ITEMS = {"constant":[["BURNT_ORANGE","`BURNT_ORANGE` is for the `organgeness` field in the Pumpkin struct."]],"enum":[["PrivateEnum","For internal use only. In fact, this documentation is so private that it won’t be generated. At least not by default. But if you pass the correct option in, it will magically appear!"]],"struct":[["Pumpkin","Big orange thing"]]};
