@@ -10,6 +10,8 @@
 // The markdown format is ![some alt text](https://url-to-the-image.png)
 // Here's the image to link to: https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/FrenchMarketPumpkinsB.jpg/700px-FrenchMarketPumpkinsB.jpg
 
+//! ![pumpkin image](https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/FrenchMarketPumpkinsB.jpg/700px-FrenchMarketPumpkinsB.jpg)
+
 // 3. Document the Pumpkin struct.
 // - The description on the index page should be "Big orange thing"
 // - Make a section header called "Recipes"
@@ -17,8 +19,15 @@
 // - Document the "roundness" field, explaining that it is a percentage
 // - Document the "orangeness" field, explaining that it is a number from 8 to 27
 
+/// Big orange thing
+///
+/// # Recipes
+///
+/// Recipes will most assuredly be coming very, very soon!
 pub struct Pumpkin {
+    /// `roundness` is a percentage
     pub roundness: f32,
+    /// `orangeness` is a number from 8 to 27
     pub orangeness: i32,
 }
 
@@ -26,12 +35,13 @@ pub struct Pumpkin {
 // can't be used for pie. :'-(
 
 impl Pumpkin {
+    /// If you smash the pumpkin, it will be gone. Then it can't be used for pie :'(
     pub fn smash(self) {}
 }
 
 // 5. Document that BURNT_ORANGE is for the "orangeness" field in the Pumpkin struct.
 // - Link to the Pumpkin struct in your description
-
+/// `BURNT_ORANGE` is for the `organgeness` field in the Pumpkin struct.
 pub const BURNT_ORANGE: i32 = 13;
 
 // Challenge: Find the option to pass to `cargo doc` so that documentation for this private item
