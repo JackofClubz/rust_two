@@ -17,7 +17,8 @@ fn main() {
     let pairs = vec![(0, 1), (2, 3), (4, 5)];
     pairs
         .into_iter()
-        .map(|t| (t.0 + 1, t.1))
+        //.map(|t| (t.0 + 1, t.1)) // <-- the first integer of the tuple is t.0 and so on..
+        .map(|(x, y)| (x + 1, y))
         .for_each(|t| println!("{:?}", t));
 
     // 3. Uncomment the code below. There is a mutable vector named `numbers`. Use an iterator over
