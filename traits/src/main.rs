@@ -1,14 +1,25 @@
-#[derive(Debug)]
+#[derive(Clone, Copy, Debug)]
 pub enum Cake {
     Chocolate,
     MapleBacon,
     Spice,
 }
 
+#[derive(Debug)]
 pub struct Party {
     pub at_restaurant: bool,
     pub num_people: u8,
     pub cake: Cake,
+}
+
+impl Default for Party {
+    fn default() -> Self {
+        Self {
+            at_restaurant: true,
+            num_people: 8,
+            cake: Cake::Chocolate,
+        }
+    }
 }
 
 fn main() {
@@ -35,16 +46,16 @@ fn main() {
     // - Manually implement the Default trait for the Party struct. Use the value below as the
     // default value that you return from the `default` method:
     //
-    //     Party {
-    //         at_restaurant: true,
-    //         num_people: 8,
-    //         cake: Cake::Chocolate,
-    //     }
+    // Party {
+    //     at_restaurant: true,
+    //     num_people: 8,
+    //     cake: Cake::Chocolate,
+    // }
     //
     // Hint: If you get stuck, there is an example at
     // https://doc.rust-lang.org/std/default/trait.Default.html#how-can-i-implement-default
 
-    // println!("The default Party is\n{:#?}", Party::default());
+    println!("The default Party is\n{:#?}", Party::default());
 
     // 4. You prefer Maple Bacon cake. Use "struct update syntax" to create a Party with `cake`
     // set to `Cake::MapleBacon`, but the rest of the values are default.
@@ -52,10 +63,11 @@ fn main() {
     // Hint: The trick to struct update syntax is specifying the value(s) you want to customize
     // first and then ending the struct with `..Default::default()` -- but no comma after that!
 
-    // let party = Party {
-    //     ...
-    // };
-    // println!("Yes! My party has my favorite {:?} cake!", party.cake);
+    let party = Party {
+        cake: Cake::MapleBacon,
+        ..Default::default()
+    };
+    println!("Yes! My party has my favorite {:?} cake!", party.cake);
 
     // 5. Parties are "equal" if they have the same cake.
     // - Derive the PartialEq trait for the Cake enum so Cakes can be compared.
