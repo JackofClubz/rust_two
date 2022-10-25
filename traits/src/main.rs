@@ -5,6 +5,12 @@ pub enum Cake {
     Spice,
 }
 
+impl PartialEq for Party {
+    fn eq(&self, other: &Self) -> bool {
+        self.cake == other.cake
+    }
+}
+
 #[derive(Debug)]
 pub struct Party {
     pub at_restaurant: bool,
@@ -19,6 +25,18 @@ impl Default for Party {
             num_people: 8,
             cake: Cake::Chocolate,
         }
+    }
+}
+
+impl From<Party> for Cake {
+    fn from(party: Party) -> Self {
+        party.cake
+    }
+}
+
+impl From<&Party> for Cake {
+    fn from(party: Party) -> Self {
+        party.cake
     }
 }
 
@@ -75,14 +93,14 @@ fn main() {
     // then they are equal, no matter the location or number of attendees at the party.
     // - Uncomment and run the code below.
 
-    // let other_party = Party {
-    //     at_restaurant: false,
-    //     num_people: 235,
-    //     cake: Cake::MapleBacon,
-    // };
-    // if party == other_party {
-    //     println!("Your party is just like mine!");
-    // }
+    let other_party = Party {
+        at_restaurant: false,
+        num_people: 235,
+        cake: Cake::MapleBacon,
+    };
+    if party == other_party {
+        println!("Your party is just like mine!");
+    }
 
     // Challenge: You would like to be able to pass a Party struct into the smell_cake() function
     // which takes a type T which implements the Into<Cake> trait.
@@ -90,20 +108,23 @@ fn main() {
     // - Implement `From<Party> for Cake` so that the function call below works.
     //
 
-    // smell_cake(party);
+    smell_cake(party);
 
     // Challenge 2: Implement `From<&Party> for Cake` so that you can smell your cake without
     // consuming it. Change the code above to pass in a &party. Then uncomment and run the code
     // below. After all, you want to smell your cake and eat it, too!
 
-    // println!("Yum! I'm eating this cake: {:?}. Oops, I dropped it on the floor.", party.cake);
-    // drop(cake);
+    println!(
+        "Yum! I'm eating this cake: {:?}. Oops, I dropped it on the floor.",
+        party.cake
+    );
+    drop(cake);
 }
 
 pub fn admire_cake(cake: Cake) {
     println!("What a nice {:?} cake! 🎂", cake);
 }
 
-// pub fn smell_cake<T: Into<Cake>>(something: T) {
-//     println!("Hmm...something smells like a {:?} cake!", something.into());
-// }
+pub fn smell_cake<T: Into<Cake>>(something: T) {
+    println!("Hmm...something smells like a {:?} cake!", something.into());
+}
