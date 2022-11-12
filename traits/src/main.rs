@@ -4,13 +4,6 @@ pub enum Cake {
     MapleBacon,
     Spice,
 }
-
-impl PartialEq for Party {
-    fn eq(&self, other: &Self) -> bool {
-        self.cake == other.cake
-    }
-}
-
 #[derive(Debug)]
 pub struct Party {
     pub at_restaurant: bool,
@@ -20,7 +13,7 @@ pub struct Party {
 
 impl Default for Party {
     fn default() -> Self {
-        Self {
+        Party {
             at_restaurant: true,
             num_people: 8,
             cake: Cake::Chocolate,
@@ -28,14 +21,14 @@ impl Default for Party {
     }
 }
 
-impl From<Party> for Cake {
-    fn from(party: Party) -> Self {
-        party.cake
+impl PartialEq for Party {
+    fn eq(&self, other: &Self) -> bool {
+        self.cake == other.cake
     }
 }
 
 impl From<&Party> for Cake {
-    fn from(party: Party) -> Self {
+    fn from(party: &Party) -> Self {
         party.cake
     }
 }
@@ -43,6 +36,7 @@ impl From<&Party> for Cake {
 fn main() {
     // 1. The code below doesn't work because Cake doesn't implement Debug.
     // - Derive the Debug trait for the Cake enum above so this code will work. Then, run the code.
+
     let cake = Cake::Spice;
     admire_cake(cake);
 
@@ -85,7 +79,10 @@ fn main() {
         cake: Cake::MapleBacon,
         ..Default::default()
     };
-    println!("Yes! My party has my favorite {:?} cake!", party.cake);
+    println!(
+        "{:?} Yes! My party has my favorite {:?} cake!",
+        party, party.cake
+    );
 
     // 5. Parties are "equal" if they have the same cake.
     // - Derive the PartialEq trait for the Cake enum so Cakes can be compared.
@@ -98,6 +95,9 @@ fn main() {
         num_people: 235,
         cake: Cake::MapleBacon,
     };
+    println!("{:#?}", party);
+    println!("{:#?}", other_party);
+
     if party == other_party {
         println!("Your party is just like mine!");
     }
@@ -108,7 +108,7 @@ fn main() {
     // - Implement `From<Party> for Cake` so that the function call below works.
     //
 
-    smell_cake(party);
+    smell_cake(&party);
 
     // Challenge 2: Implement `From<&Party> for Cake` so that you can smell your cake without
     // consuming it. Change the code above to pass in a &party. Then uncomment and run the code
