@@ -22,9 +22,13 @@ mod test {
     // 3. Write a test function that verifies the following condition using the `assert_eq!` or
     // `assert_ne!` macros
     // - sploosh(1, 2, 3) returns 4
+    // You can add multiple test on the same function so long we derive the '#[test] trait for the compiler to understand the difference. However, the compiler compiles all the tests at onece and can make it harder
+    //  to debug
     #[test]
-    fn sploosh_test1(){
+    fn sploosh_tests(){
         assert_eq!(sploosh(1,2,3),4);
+        assert_ne!(sploosh(5,6,7),4);
+        assert_eq!(sploosh(-1,1,2),99);
     }
     // - sploosh(5, 6, 7) does not return 4
     // - If you pass sploosh a negative number for the first argument, 99 is returned
