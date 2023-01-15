@@ -1,0 +1,11 @@
+C:\Users\LanceTersou\rust_two\testing\target\release\deps\ciborium_ll-e684ff8267057c45.rmeta: C:\Users\LanceTersou\.cargo\registry\src\github.com-1ecc6299db9ec823\ciborium-ll-0.2.0\src\lib.rs C:\Users\LanceTersou\.cargo\registry\src\github.com-1ecc6299db9ec823\ciborium-ll-0.2.0\src\dec.rs C:\Users\LanceTersou\.cargo\registry\src\github.com-1ecc6299db9ec823\ciborium-ll-0.2.0\src\enc.rs C:\Users\LanceTersou\.cargo\registry\src\github.com-1ecc6299db9ec823\ciborium-ll-0.2.0\src\hdr.rs C:\Users\LanceTersou\.cargo\registry\src\github.com-1ecc6299db9ec823\ciborium-ll-0.2.0\src\seg.rs
+
+C:\Users\LanceTersou\rust_two\testing\target\release\deps\libciborium_ll-e684ff8267057c45.rlib: C:\Users\LanceTersou\.cargo\registry\src\github.com-1ecc6299db9ec823\ciborium-ll-0.2.0\src\lib.rs C:\Users\LanceTersou\.cargo\registry\src\github.com-1ecc6299db9ec823\ciborium-ll-0.2.0\src\dec.rs C:\Users\LanceTersou\.cargo\registry\src\github.com-1ecc6299db9ec823\ciborium-ll-0.2.0\src\enc.rs C:\Users\LanceTersou\.cargo\registry\src\github.com-1ecc6299db9ec823\ciborium-ll-0.2.0\src\hdr.rs C:\Users\LanceTersou\.cargo\registry\src\github.com-1ecc6299db9ec823\ciborium-ll-0.2.0\src\seg.rs
+
+C:\Users\LanceTersou\rust_two\testing\target\release\deps\ciborium_ll-e684ff8267057c45.d: C:\Users\LanceTersou\.cargo\registry\src\github.com-1ecc6299db9ec823\ciborium-ll-0.2.0\src\lib.rs C:\Users\LanceTersou\.cargo\registry\src\github.com-1ecc6299db9ec823\ciborium-ll-0.2.0\src\dec.rs C:\Users\LanceTersou\.cargo\registry\src\github.com-1ecc6299db9ec823\ciborium-ll-0.2.0\src\enc.rs C:\Users\LanceTersou\.cargo\registry\src\github.com-1ecc6299db9ec823\ciborium-ll-0.2.0\src\hdr.rs C:\Users\LanceTersou\.cargo\registry\src\github.com-1ecc6299db9ec823\ciborium-ll-0.2.0\src\seg.rs
+
+C:\Users\LanceTersou\.cargo\registry\src\github.com-1ecc6299db9ec823\ciborium-ll-0.2.0\src\lib.rs:
+C:\Users\LanceTersou\.cargo\registry\src\github.com-1ecc6299db9ec823\ciborium-ll-0.2.0\src\dec.rs:
+C:\Users\LanceTersou\.cargo\registry\src\github.com-1ecc6299db9ec823\ciborium-ll-0.2.0\src\enc.rs:
+C:\Users\LanceTersou\.cargo\registry\src\github.com-1ecc6299db9ec823\ciborium-ll-0.2.0\src\hdr.rs:
+C:\Users\LanceTersou\.cargo\registry\src\github.com-1ecc6299db9ec823\ciborium-ll-0.2.0\src\seg.rs:
